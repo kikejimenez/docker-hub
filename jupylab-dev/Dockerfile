@@ -1,4 +1,4 @@
-FROM jupyter/minimal-notebook
+FROM jupyter/minimal-notebook:latest
 
 
 USER $NB_USER
@@ -18,6 +18,8 @@ RUN pip install jupyterlab_code_formatter && \
     pip install 'jupyterlab>=3.0.0,<4.0.0a0' jupyterlab-lsp && \
     pip install 'python-language-server[all]' && \
     pip install jupyterlab_execute_time
+
+RUN jupyter server extension disable nbclassic
 
 #themes
 RUN pip install jupyterlab_theme_solarized_dark && \
