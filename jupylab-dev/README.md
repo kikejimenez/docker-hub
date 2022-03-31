@@ -16,6 +16,18 @@ Create an image by running on the root folder:
 docker build -t jupylab-dev . 
 ```
 
+Tag a version:
+
+```bash
+docker tag ejimenezr/jupylab-dev:lates
+```
+
+Push to docker-hub:
+
+```bash
+docker push ejimenezr/jupylab-dev:latest
+```
+
 ## Docker Run Example
 
 ```bash
