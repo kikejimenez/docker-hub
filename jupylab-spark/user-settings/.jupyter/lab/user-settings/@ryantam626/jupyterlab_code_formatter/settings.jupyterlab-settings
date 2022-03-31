@@ -1,0 +1,8 @@
+ {"preferences": {
+        "default_formatter": {
+            "python": [
+                "yapf",
+            ],
+            "r": "formatR"
+        }
+    }}
