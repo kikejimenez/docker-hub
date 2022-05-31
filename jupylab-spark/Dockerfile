@@ -1,4 +1,5 @@
-FROM jupyter/pyspark-notebook
+FROM jupyter/all-spark-notebook:31b807ec9e83
+
 
 
 USER $NB_USER
@@ -6,26 +7,8 @@ USER $NB_USER
 #upgrade jupyterlab
 RUN pip install --upgrade jupyterlab 
 
-
-#code formatter 
-#collapse headings
-#xeus-python
-#python-language-server
-RUN pip install jupyterlab_code_formatter && \
-    pip install yapf && \
-    pip install aquirdturtle_collapsible_headings && \
-    pip install xeus-python notebook && \
-    pip install 'jupyterlab>=3.0.0,<4.0.0a0' jupyterlab-lsp && \
-    pip install 'python-language-server[all]' && \
-    pip install jupyterlab_execute_time
-
-#themes
-RUN pip install jupyterlab_theme_solarized_dark && \
-    pip install jupyterlab_theme_hale
-
 #nbdev
 RUN pip install nbdev twine
-
 
 #user settings
 USER root
